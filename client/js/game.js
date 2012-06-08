@@ -19,5 +19,5 @@ requirejs.config({
 });
 
 require(['three', 'underscore'], function(THREE, _) {
-
+  console.log(THREE);
 });
