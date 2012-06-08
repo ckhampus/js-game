@@ -31,17 +31,15 @@ app.configure('production', function(){
 
   var config = {
     baseUrl: sourceDir,
-    name: 'game',
+    name: 'lib/almond',
+    //include: ['game'],
+    //insertRequire: ['game'],
     out: path.join(publicDir, 'game-built.js'),
-    mainConfigFile: path.join(sourceDir, 'game.js'),
-    wrap: true
+    wrap: true,
+    mainConfigFile: path.join(sourceDir, 'game.js')
   };
 
   requirejs.optimize(config, function (buildResponse) {
-    //buildResponse is just a text output of the modules
-    //included. Load the built file for the contents.
-    //Use config.out to get the optimized file contents.
-    //var contents = fs.readFileSync(config.out, 'utf8');
     console.log('Files optimized');
   });
 });
